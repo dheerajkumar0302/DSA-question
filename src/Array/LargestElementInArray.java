@@ -25,6 +25,6 @@ class Solution
         {
             max=Math.max(max,arr[i]);// in every step store maximum number
         }
-        return max;// return largest element
+        return max;
     }
 }
