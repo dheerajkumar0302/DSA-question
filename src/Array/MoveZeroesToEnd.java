@@ -24,26 +24,43 @@ public class MoveZeroesToEnd {
         int n = sc.nextInt();
         int[] arr = new int[n];
         System.out.println("Enter array:");
-        for(int i = 0 ; i< n ;i++)
-        {
-            arr[i]=sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        moveZeroes(arr,n);
+        moveZeroes(arr, n);
         System.out.println(Arrays.toString(arr));
     }
-    static void moveZeroes(int[] arr , int n)
-    {
-        int j=0;
-        for(int i=0 ; i< n ; i++)
-        {
-            if(arr[i]!=0)
-            {
-                int temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
+
+    static void moveZeroes(int[] arr, int n) {
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
                 j++;
             }
         }
     }
+
+    // j=-1;
+    // for(int i=0 ; i< n ; i++)
+    //{
+    //      if(arr[i]==0)
+    //      {
+//                j=i;       set j pointer
+//                break;
+//          }
+//    }
+//    for (int i = j + 1; i < n; i++) {
+//        if (a[i] != 0) {
+//            //swap a[i] & a[j]:
+//            int tmp = a[i];
+//            a[i] = a[j];
+//            a[j] = tmp;
+//            j++;
+//        }
+//    }
+
 }
