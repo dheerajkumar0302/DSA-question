@@ -75,10 +75,18 @@ public class MergeTwoSortedArray_Pos {
         }
         while(i<a.length)
         {
+            while(i<a.length-1 && a[i]==a[i+1])
+            {
+                i++;
+            }
             ans.add(a[i++]);
         }
         while(j<b.length)
         {
+            while(j<b.length-1 && b[j]==b[j+1])
+            {
+                j++;
+            }
             ans.add(b[j++]);
         }
         return ans;
