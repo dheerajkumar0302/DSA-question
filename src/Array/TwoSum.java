@@ -49,13 +49,12 @@ public class TwoSum {
         {
             if(mpp.containsKey(target-arr[i]))
             {
-                ans[0]=i;
-                ans[1]=mpp.get(target-arr[i]);
+                return new int[]{i,mpp.get(target-arr[i])};
             }
 
             mpp.put(arr[i],i);
         }
-        return ans;
+        return new int[]{-1, -1};
     }
 
 }
