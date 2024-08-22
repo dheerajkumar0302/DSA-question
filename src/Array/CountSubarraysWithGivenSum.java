@@ -39,17 +39,20 @@ public class CountSubarraysWithGivenSum {
     private static int countSubarrayWithGivenSum(int[] arr , int n , int k)
     {
         HashMap<Integer,Integer> mpp = new HashMap<>();
-        mpp.put(0,1);
-        int cnt=0;
         int sum=0;
+        int cnt=0;
+        mpp.put(0,1);
         for(int i=0 ; i<n ; i++)
         {
             sum+=arr[i];
             int rem=sum-k;
-            cnt+=mpp.getOrDefault(rem,0);
+            if(mpp.containsKey(rem))
+            {
+                cnt+=mpp.get(rem);
+            }
+
             mpp.put(sum,mpp.getOrDefault(sum,0)+1);
         }
-
         return cnt;
     }
 }
