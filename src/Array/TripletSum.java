@@ -88,6 +88,8 @@ public class TripletSum {
         for(int i = 0 ; i< n ; i++)
         {
             if(i!=0 && arr[i]==arr[i-1])    continue;
+            if(arr[i]>0)
+                break;
             int j=i+1 ;
             int k=n-1;
             while(j<k)
@@ -100,7 +102,7 @@ public class TripletSum {
                     j++;
                     k--;
                     while(j<k && arr[j]==arr[j-1])  j++;
-                    while(j<k && arr[k]==arr[k+1])  k++;
+                    while(j<k && arr[k]==arr[k+1])  k--;
                 } else if (sum<0) {
                     j++;
                 }
