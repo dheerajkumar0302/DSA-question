@@ -16,7 +16,9 @@ public class SubarrayWithGivenXor {
         System.out.print("Enter xor value: ");
         int target = sc.nextInt();
         System.out.println(subarrayWithGivenXor(arr,target));
+        System.out.println(subarrayWithZeroXor(arr,n));
     }
+
 
 
     // naive method
@@ -41,15 +43,31 @@ public class SubarrayWithGivenXor {
         HashMap<Integer,Integer> mpp = new HashMap<>();
         int xr=0;
         mpp.put(xr,1);
-        for(int i=0 ; i<arr.length;i++)
-        {
-            xr^=arr[i];
-            int x = xr^target;
-            if(mpp.containsKey(x))
-                cnt+=mpp.get(x);
+        for (int j : arr) {
+            xr ^= j;
+            int x = xr ^ target;
+            if (mpp.containsKey(x))
+                cnt += mpp.get(x);
 
-            mpp.put(xr,mpp.getOrDefault(xr,0)+1);
+            mpp.put(xr, mpp.getOrDefault(xr, 0) + 1);
         }
         return cnt;
     }
+    private static int subarrayWithZeroXor(int[] arr, int n) {
+        int cnt=0;
+        HashMap<Integer,Integer> mpp = new HashMap<>();
+        int xr=0;
+        mpp.put(xr,1);
+        for (int j : arr) {
+            xr ^= j;
+            if (xr == 0)
+                cnt++;
+            if (mpp.containsKey(xr))
+                cnt += mpp.get(xr);
+            mpp.put(xr, mpp.getOrDefault(xr, 0) + 1);
+        }
+        return cnt;
+    }
+
+
 }
