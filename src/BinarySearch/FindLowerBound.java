@@ -67,14 +67,14 @@ public class FindLowerBound {
         System.out.println(findLowerBound(nums,target));
     }
 
-    private static int findLowerBound(int[] nums, int target) {
+    private static int findLowerBound(int[] nums, int x) {
         int low = 0 ;
         int high = nums.length-1;
         int ans=nums.length;
         while(low<=high)
         {
             int mid =low+(high-low)/2;
-            if(nums[mid]>=target)
+            if(nums[mid]>=x)
             {
                 ans= mid;
                 high=mid-1;
