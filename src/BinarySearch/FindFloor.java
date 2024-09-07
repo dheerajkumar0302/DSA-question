@@ -1,5 +1,6 @@
 package BinarySearch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FindFloor {
@@ -19,6 +20,7 @@ public class FindFloor {
     }
 
     private static int findFloor(int[] nums, int x) {
+        Arrays.sort(nums);
         int low = 0 ;
         int high = nums.length-1;
         while(low<=high)
