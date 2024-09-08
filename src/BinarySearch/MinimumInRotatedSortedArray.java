@@ -71,4 +71,35 @@ public class MinimumInRotatedSortedArray {
     //        }
     //        return ans;
     //    }
+
+
+
+    // Another Approach
+//    public static int findMin(int []arr){
+//        // Write your code here.
+//        int low = 0;
+//        int high = arr.length - 1;
+//
+//        // If the array is not rotated (already sorted)
+//        if (arr[low] <= arr[high]) {
+//            return arr[low];
+//        }
+//
+//        // Binary search to find the minimum element
+//        while (low <= high) {
+//            int mid = low + (high - low) / 2;
+//
+//            // Check if mid is the minimum element
+//            if (mid > 0 && arr[mid] < arr[mid - 1]) {
+//                return arr[mid];
+//            }
+//
+//            if(arr[mid]>arr[high])
+//                low=mid+1;
+//            else
+//                high=mid-1;
+//        }
+//
+//        return arr[low];
+//    }
 }
