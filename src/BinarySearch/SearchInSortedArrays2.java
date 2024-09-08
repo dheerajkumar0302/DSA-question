@@ -1,5 +1,6 @@
 package BinarySearch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SearchInSortedArrays2 {
@@ -19,6 +20,7 @@ public class SearchInSortedArrays2 {
     }
     private static boolean search(int[] nums , int target)
     {
+        Arrays.sort(nums);
         int low = 0 ;
         int high = nums.length-1;
         while(low<=high)
