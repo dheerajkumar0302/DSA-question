@@ -18,6 +18,7 @@ public class LargestElementInArray {
 }
 class Solution
 {
+
     public  int largestElement(int[] arr , int n)
     {
         int max=Integer.MIN_VALUE;// store smallest value;
