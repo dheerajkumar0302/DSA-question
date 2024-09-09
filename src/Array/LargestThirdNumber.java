@@ -7,6 +7,7 @@ public class LargestThirdNumber {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of an array: ");
         int n = sc.nextInt();
+        System.out.println("Enter array: ");
         int[] nums = new int[n];
         for(int i=0 ; i< n ; i++)
         {
