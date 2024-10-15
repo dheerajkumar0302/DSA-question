@@ -17,7 +17,6 @@ public class NextGreaterElement {
         }
         System.out.println(Arrays.toString(nextGreaterElement(arr,n)));
     }
-
     private static int[] nextGreaterElement(int[] arr, int n) {
         Stack<Integer> stack = new Stack<>();
         int[] result = new int[n];
@@ -25,7 +24,6 @@ public class NextGreaterElement {
         // Initialize the last element's result to -1 (no greater element).
         result[n - 1] = -1;
         stack.push(n - 1);  // Push the index of the last element.
-
         // Traverse the array from right to left.
         for (int i = n - 2; i >= 0; i--) {
             // Pop elements from the stack until a greater element is found.
@@ -39,7 +37,6 @@ public class NextGreaterElement {
             // Push the current index onto the stack.
             stack.push(i);
         }
-
         return result;
     }
 }
