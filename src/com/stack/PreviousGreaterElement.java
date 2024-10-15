@@ -1,8 +1,9 @@
 package com.stack;
 
-import java.util.ArrayDeque;
+
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class PreviousGreaterElement {
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class PreviousGreaterElement {
     }
 
     private static int[] prevGreaterElement(int[] arr, int n) {
-        ArrayDeque<Integer> stack = new ArrayDeque<>();
+        Stack<Integer> stack = new Stack<>();
         int[] prev=new int[n];
         prev[0]=-1;
         stack.push(0);
