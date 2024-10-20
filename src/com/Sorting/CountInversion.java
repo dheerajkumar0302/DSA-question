@@ -1,4 +1,4 @@
-package Sorting;
+package com.Sorting;
 
 import java.util.ArrayList;
 import java.util.Scanner;

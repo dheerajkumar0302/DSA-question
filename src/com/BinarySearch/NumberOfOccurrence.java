@@ -1,23 +1,18 @@
-package BinarySearch;
+package com.BinarySearch;
 
-
-//Given an array of integers nums sorted in non-decreasing order,
-// find the starting and ending position of a given target value.
-//
-//If target is not found in the array, return [-1, -1].
-//
-//You must write an algorithm with O(log n) runtime complexity.
-//
-//
+//Given a sorted array Arr of size N and a number X, you need to find the number of occurrences of X in Arr.
 //
 //Example 1:
 //
-//Input: nums = [5,7,7,8,8,10], target = 8
-//Output: [3,4]
+//Input:
+//N = 7, X = 2
+//Arr[] = {1, 1, 2, 2, 2, 2, 3}
+//Output: 4
+//Explanation: x = 2 occurs 4 times in the given array so the output is 4.
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class FindFirstAndLastPositionInSortedArray {
+public class NumberOfOccurrence {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of an array: ");
@@ -30,18 +25,18 @@ public class FindFirstAndLastPositionInSortedArray {
         }
         System.out.print("Enter target value:  ");
         int target =sc.nextInt();
-        System.out.println(Arrays.toString(findFirstAndLast(nums, target)));
+        System.out.println(noOfOccurrence(nums,target));
     }
 
-    private static int[] findFirstAndLast(int[] nums, int target) {
+    private static int noOfOccurrence(int[] nums, int target) {
         Arrays.sort(nums);
-        int[] ans = new int[2];
-        ans[0]=findFirst(nums,target);
-        ans[1]=findLast(nums,target);
-
-        return ans;
+        int first=findFirst(nums,target);
+        int last=findLast(nums,target);
+        if(first==-1 && last == -1)
+            return 0;
+        int ans = (last-first);
+        return ans+1;
     }
-
     private static int findFirst(int[] nums , int target)
     {
         int low=0 ;

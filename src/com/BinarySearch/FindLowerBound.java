@@ -1,4 +1,4 @@
-package BinarySearch;
+package com.BinarySearch;
 
 import java.util.Scanner;
 //. For a sorted array 'arr', 'lower_bound' of a number 'x' is defined as the smallest index 'idx' such that the value 'arr[idx]' is not less than 'x'.If all numbers are smaller than 'x', then 'n' should be the 'lower_bound' of 'x', where 'n' is the size of array.

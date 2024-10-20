@@ -1,4 +1,4 @@
-package BinarySearch;
+package com.BinarySearch;
 
 import java.util.Scanner;
 //Input: nums = [1,2,3,1]

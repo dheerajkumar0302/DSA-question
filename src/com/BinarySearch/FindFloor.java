@@ -1,9 +1,9 @@
-package BinarySearch;
+package com.BinarySearch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-
-public class BinarySearchtoFindXinSortedArray {
+public class FindFloor {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of an array: ");
@@ -16,23 +16,24 @@ public class BinarySearchtoFindXinSortedArray {
         }
         System.out.print("Enter target value:  ");
         int target =sc.nextInt();
-        System.out.println(search(nums,target));
+        System.out.println(findFloor(nums,target));
     }
 
-    private static int search(int[] nums, int target) {
+    private static int findFloor(int[] nums, int x) {
+        Arrays.sort(nums);
         int low = 0 ;
         int high = nums.length-1;
         while(low<=high)
         {
             int mid =low+(high-low)/2;
-            if(nums[mid]==target)
+            if(nums[mid]==x)
                 return mid;
-            if(nums[mid]>target)
+            if(nums[mid]>x)
                 high=mid-1;
             else
                 low=mid+1;
         }
 
-        return -1;
+        return high;
     }
 }
