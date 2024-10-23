@@ -17,7 +17,7 @@ public class PanagramChecking {
             char ch = str.charAt(i);
             if (ch >= 'a' && ch <= 'z') {
                 freq[ch - 'a']++;
-            } else if (ch >= 'A' && ch <= 'Z') {  // Corrected here
+            } else if (ch >= 'A' && ch <= 'Z') {
                 freq[ch - 'A']++;
             }
         }
